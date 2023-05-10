@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AJAX Program</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="data"></div>
+
+    <script>
+      $(document).ready(function() {
+  $.ajax({
+    url: "data.json",
+    dataType: "json",
+    success: function(data) {
+      var html = "<p>Name: " + data.name + "</p>";
+      html += "<p>Model: " + data.model + "</p>";
+      html += "<p>Price: " + data.price + "</p>";
+      $("#data").html(html);
+    }
+  });
+});
+    </script>
+  </body>
+</html>
